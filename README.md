@@ -27,7 +27,7 @@ CPU: AMD Ryzen 9 9950X
 Clone this repository locally and deploy the model together with the required packages in a Python 3.10 environment created using Anaconda.
 
 ```bash
-git clone https://github.com/Kaiwen1973/evoMOBO.git
+git clone https://github.com/Kaiwen1973/EvoMOBO.git
 cd evoMOBO
 ```
 
@@ -78,11 +78,7 @@ python -m pip check
 
 ## Sequence optimization in a graphical interface
 
-The graphical interface supports the multi-objective Sequence optimization. It provides file uploading, configuration, and result downloads. Start it from the Conda environment required by the selected encoder.
-
-### Interface guide
-
-Select the optimization stage, then upload `known_data.csv` and `wt.fasta` for the first round or a completed `exam.csv` for the second round and subsequent rounds; `seed_data.csv` and `pool.csv` are optional. Configure the optimization workflow according to the specific task, then click **Run one optimization round** to start. Progress and outputs can be inspected under **Results & Logs**.
+EvoMOBO provides a graphical interface for quickly launching multi-objective sequence optimization, including file uploading, workflow configuration, progress monitoring, and result downloads. Launch the interface from the Conda environment required by the selected encoder. Select the optimization stage, then upload `known_data.csv` and `wt.fasta` for the first round or a completed `exam.csv` for the second and subsequent rounds; `seed_data.csv` and `pool.csv` are optional. Configure the optimization workflow according to the specific task, then click `Run one optimization round` to start. Progress and outputs can be inspected under `Results & Logs`.
 
 ![EvoMOBO graphical interface](./pictures/EvoMOBO_GUI.png)
 
@@ -99,6 +95,8 @@ python streamlit_app/launch.py --mode remote  --public-host your_server_ip
 ```
 
 ## Sequence optimization in terminal
+
+EvoMOBO can also launch optimization tasks directly from the terminal. Users can select or replace modules from the command line for a specific task. Advanced settings can be configured through the files in the `hydra_config` directory.
 
 ### Input
 
