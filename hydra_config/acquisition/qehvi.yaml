@@ -1,0 +1,4 @@
+_target_: evomobo.acquisitions.qehvi.QExpectedHypervolumeImprovement
+
+num_samples: 2
+batch_size: ${task.batch_size}

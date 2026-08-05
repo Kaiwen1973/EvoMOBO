@@ -1,0 +1,40 @@
+# Install torch/torchvision from the official cu128 index before this file.
+--extra-index-url https://download.pytorch.org/whl/cu128
+torch==2.8.0+cu128
+torchvision==0.23.0+cu128
+
+# Bayesian optimization stack
+gpytorch==1.6.0
+botorch @ git+https://github.com/pytorch/botorch.git@c2cb5bc6a2e61b2612ba505865935b681861298d
+upcycle @ git+https://github.com/samuelstanton/upcycle.git@master
+
+# Protein encoder used only by encoder=esm
+fair-esm==2.0.0
+
+# Core scientific and application dependencies
+python-levenshtein==0.12.2
+biopython==1.81
+tabulate==0.8.9
+pypdb==2.0
+aiohttp==3.12.14
+aioredis==1.3.0
+hydra-core==1.1.0
+omegaconf==2.1.2
+antlr4-python3-runtime==4.8
+cloudpickle==1.6.0
+pymoo==0.5.0
+tqdm==4.62.3
+pandas==1.3.5
+numpy==1.22.3
+scipy==1.11.4
+scikit-learn==1.1.1
+networkx==2.6.3
+cachetools==5.0.0
+statsmodels==0.13.2
+seaborn==0.11.2
+wandb==0.21.0
+pydantic==2.11.7
+packaging==24.2
+pyarrow==17.0.0
+watchdog==4.0.2
+streamlit==1.38.0

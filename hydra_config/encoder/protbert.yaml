@@ -1,0 +1,21 @@
+_target_: evomobo.models.lm_elements.LanguageModel
+name: protbert
+
+model:
+  _target_: evomobo.models.protbert_encoder.ProtBertEncoderLmHeadForLambo
+  tokenizer: ${tokenizer}
+  max_len: ${task.max_len}
+  model_name: Rostlab/prot_bert_bfd
+  out_dim: 32
+  kernel_size: 5
+  p: 0.0
+  layernorm: true
+  max_len_delta: 0
+  local_files_only: false
+
+batch_size: 64
+num_epochs: 128
+patience: 32
+lr: 1e-3
+max_shift: 0
+mask_ratio: 0.125

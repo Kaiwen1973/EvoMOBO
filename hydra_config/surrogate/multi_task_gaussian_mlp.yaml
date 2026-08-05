@@ -1,0 +1,34 @@
+_target_: evomobo.models.gaussian_mlp_models.MultiTaskGaussianMLP
+
+training_seed: 0
+
+max_shift: 0
+mask_size: 0
+
+bootstrap_ratio: null
+min_num_train: 1
+
+gp_lr: 1e-3
+enc_lr: 1e-3
+pretrain_lr: 1e-5
+encoder_wd: 5e-5
+
+bs: ${encoder.batch_size}
+
+num_epochs: 256
+holdout_ratio: 0.2
+patience: 50
+eval_period: 1
+
+out_dim: ${task.obj_dim}
+feature_dim: 32
+
+hidden_dims: [64, 32]
+activation: relu
+dropout: 0.0
+
+latent_variance_init: 0.1
+observation_noise_init: 0.05
+min_variance: 1e-5
+min_noise: 1e-4
+standardize_features: true

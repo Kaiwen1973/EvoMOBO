@@ -1,0 +1,22 @@
+_target_: evomobo.models.lm_elements.LanguageModel
+name: esm
+
+model:
+  _target_: evomobo.models.shared_elements.EsmEncoderLmHeadForLambo
+  tokenizer: ${tokenizer}
+  max_len: ${task.max_len}
+  out_dim: 32
+  kernel_size: 5
+  p: 0.
+  layernorm: True
+  max_len_delta: 0
+  esm_variant: esm2_t33_650M_UR50D
+
+  esm_dropout: false
+
+batch_size: 64
+num_epochs: 128
+patience: 32
+lr: 1e-3
+max_shift: 0
+mask_ratio: 0.125

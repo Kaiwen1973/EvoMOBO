@@ -1,0 +1,23 @@
+_target_: evomobo.tasks.opt_task.opt_task.OPTTask
+_recursive_: False
+
+log_prefix: double_objective_task
+
+obj_dim: 2
+objective_directions: ["min", "max"]
+batch_size: 16
+
+max_len: null
+seq_max_len: null
+
+num_start_examples: 38
+seed_sampling_mode: "first"    
+seed_sampling_seed: 0   
+
+update_known_from_exam: True
+update_pool_from_exam: True
+update_seed_from_exam: False
+
+clear_exam_after_merge: False
+
+unknown_score_policy: "error"

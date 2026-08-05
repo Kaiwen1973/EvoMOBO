@@ -1,0 +1,30 @@
+defaults:
+  - logger: local
+  - acquisition: exploitative_qnehvi
+  - encoder: esm
+  - optimizer: evomobo
+  - tokenizer: protein
+  - surrogate: multi_task_exact_gp
+  - task: double_objective_task
+
+seed: ${trial_id}
+trial_id: 0
+project_name: EVOMOBO
+version: v0.1.1
+
+data_dir: ./train_log
+exp_name: ${task.log_prefix}
+job_name: null
+timestamp: ${now:%Y-%m-%d_%H-%M-%S}
+log_dir: ${data_dir}/${exp_name}
+
+wandb_enabled: false
+wandb_mode: offline          # online | offline | disabled
+wandb_host: https://api.wandb.ai
+
+hydra:
+  run:
+    dir: ./${log_dir}
+  sweep:
+    dir: ./${log_dir}
+    subdir: .

@@ -1,0 +1,3 @@
+_target_: evomobo.acquisitions.single_objective_ei.BatchExpectedImprovement
+num_samples: 2
+batch_size: ${task.batch_size}

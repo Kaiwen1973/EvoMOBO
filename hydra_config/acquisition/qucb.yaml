@@ -1,0 +1,12 @@
+_target_: evomobo.acquisitions.qucb.QMultiObjectiveUpperConfidenceBound
+
+num_samples: 2
+batch_size: ${task.batch_size}
+
+# Exploration weight.
+beta: 0.2
+
+# Chebyshev augmentation.
+alpha: 0.05
+qmc_weights: true
+weight_seed: null

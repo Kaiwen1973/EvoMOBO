@@ -1,0 +1,28 @@
+defaults:
+  - _self_
+  - override /acquisition@_global_.acquisition: single_objective_ei
+  - override /optimizer@_global_.optimizer: single_objective_evomobo
+  - override /surrogate@_global_.surrogate: single_task_exact_gp
+
+_target_: evomobo.tasks.single_objective_task.SingleObjectiveTask
+_recursive_: False
+
+log_prefix: single_objective_task
+obj_dim: 1
+objective_direction: min
+batch_size: 16
+
+seq_max_len: null
+max_len: null
+allow_len_change: false
+
+num_active_candidates: 16
+num_start_examples: 38
+seed_sampling_mode: first
+seed_sampling_seed: 0
+
+update_known_from_exam: true
+update_pool_from_exam: true
+update_seed_from_exam: false
+clear_exam_after_merge: false
+unknown_score_policy: error

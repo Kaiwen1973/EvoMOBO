@@ -1,0 +1,22 @@
+defaults:
+  - encoder: esm
+  - tokenizer: protein
+  - _self_
+
+task:
+  seq_max_len: null
+  max_len: null
+  obj_dim: null
+
+input_csv: evomobo/assets/inferring/inferring.csv
+output_csv: evomobo/assets/inferring/inferring_pred.csv
+
+ckpt_path: null
+ckpt_name: default
+
+device: auto
+predict_chunk_size: 128
+
+hydra:
+  run:
+    dir: .

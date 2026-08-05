@@ -1,0 +1,38 @@
+_target_: evomobo.optimizers.single_objective_evomobo.SingleObjectiveEvoMOBO
+_recursive_: False
+
+num_rounds: 1
+num_gens: 64
+num_opt_steps: 16
+patience: 64
+lr: 0.05
+concentrate_pool: 1
+mask_ratio: 0.125
+resampling_weight: 0.5
+
+encoder_obj: mlm
+optimize_latent: true
+position_sampler: uniform
+entropy_penalty: 1e-2
+latent_trust_radius: 0.5
+window_size: 1
+latent_init: null
+mutable_positions: "25,26,28,29"
+positions_index_base: 1
+obj_weights: [1.0]
+
+offline_mode: true
+offline_selection_mode: greedy_mean_ei  # rank1_batch_only | batch_ei | greedy_mean_ei
+offline_num_suggestions: 16
+offline_suggest_csv: to_eval.csv
+offline_exam_template_csv: exam_template.csv
+offline_backfill_from_ranked_batches: true
+
+ckpt_dir: null
+ckpt_name: evomobo_single
+resume: true
+save_ckpt_every_round: true
+resume_allow_unsafe: false
+
+print_splits: true
+print_splits_max_rows: 0

@@ -1,0 +1,51 @@
+_target_: evomobo.models.gp_models.MultiTaskExactGP
+
+training_seed: 0
+
+max_shift: 0
+mask_size: 0
+
+bootstrap_ratio: null
+min_num_train: 1
+task_noise_init: 0.15
+
+gp_lr: 1e-3
+enc_lr: 1e-3
+pretrain_lr: 1e-5
+encoder_wd: 5e-5
+
+bs: ${encoder.batch_size}
+
+num_epochs: 256
+holdout_ratio: 0.2
+patience: 50
+eval_period: 1
+
+out_dim: ${task.obj_dim}
+feature_dim: 32
+rank: 1
+
+task_covar_prior:
+  _target_: gpytorch.priors.LKJCovariancePrior
+  n: ${task.obj_dim}
+  eta: 2.
+  sd_prior:
+    _target_: gpytorch.priors.SmoothedBoxPrior
+    a: 1e-4
+    b: 1.0
+
+data_covar_module:
+  _target_: gpytorch.kernels.MaternKernel
+  ard_num_dims: ${surrogate.feature_dim}
+  lengthscale_prior:
+    _target_: gpytorch.priors.NormalPrior
+    loc: 0.7
+    scale: 0.3
+
+likelihood:
+  _target_: gpytorch.likelihoods.MultitaskGaussianLikelihood
+  num_tasks: ${task.obj_dim}
+  has_global_noise: False
+  noise_constraint:
+    _target_: gpytorch.constraints.GreaterThan
+    lower_bound: 1e-4

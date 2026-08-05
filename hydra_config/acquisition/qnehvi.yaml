@@ -1,0 +1,4 @@
+_target_: evomobo.acquisitions.ehvi.NoisyEHVI
+num_samples: 2
+batch_size: ${task.batch_size}
+prune_baseline: false

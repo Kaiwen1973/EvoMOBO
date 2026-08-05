@@ -1,0 +1,9 @@
+_target_: evomobo.acquisitions.qnparego.QNoisyParEGO
+
+num_samples: 2
+batch_size: ${task.batch_size}
+
+# Keep one scalarization per slot for the BO round.
+alpha: 0.05
+qmc_weights: true
+weight_seed: null
