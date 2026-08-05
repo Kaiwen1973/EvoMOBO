@@ -28,7 +28,7 @@ Clone this repository locally and deploy the model together with the required pa
 
 ```bash
 git clone https://github.com/Kaiwen1973/EvoMOBO.git
-cd evoMOBO
+cd EvoMOBO
 ```
 
 ### ESM-2, mCNN, and one-hot environment
