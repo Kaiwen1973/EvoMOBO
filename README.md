@@ -91,7 +91,7 @@ python streamlit_app/launch.py --mode local
 ### Remote server
 
 ```bash
-python streamlit_app/launch.py --mode remote  --public-host your_server_ip
+python streamlit_app/launch.py --mode remote  --public-host your_server_ip  --port your_tcp_port
 ```
 
 ## Sequence optimization in terminal
