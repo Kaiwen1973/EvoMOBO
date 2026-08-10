@@ -240,4 +240,17 @@ Output files generated after round `N` are stored in `./evomobo/assets/active_le
 
 For the second round and subsequent rounds, manually enter the evaluated sequences and their measured objective values into `exam.csv`, and then run the same optimization command.
 
+## Citation
+
+If you use EvoMOBO in your research, please cite our paper:
+
+```
+@article{Wen2026,
+  title={Evolution-inspired multi-objective Bayesian optimization for protein engineering},
+  author={Wen, Kai and Wang, Sirui and Sun, Yixin and Li, Shiwen and Wang, Mengsong and Liu, Haoyang and Li, Quanshun and Zhu, Jingxuan},
+  journal={bioRxiv},
+  year={2026},
+  doi={10.64898/2026.08.05.743005}
+}
+```
 
