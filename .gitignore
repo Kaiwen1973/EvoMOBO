@@ -67,7 +67,6 @@ hydra_config.txt
 /evomobo/assets/active_learning/
 /evomobo/assets/inferring/
 /evomobo_checkpoints/
-/data_archiving/
 *.pt
 *.pth
 *.ckpt
